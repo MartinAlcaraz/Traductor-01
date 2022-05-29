@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traductor Cool</title>
+
+    <link href="./assets/css/reset.css" rel="stylesheet" />
+    <link href="./assets/css/normalize.css" rel="stylesheet" />
+    <link href="./assets/css/base.css" rel="stylesheet" />
+
+    <link href="./assets/css/index.css" rel="stylesheet" />
+    <link href="./assets/css/menu-principal.css" rel="stylesheet" />
+    <link href="./assets/css/carrusel-idioma.css" rel="stylesheet" />
+    <link href="./assets/css/traductor.css" rel="stylesheet" />
+
+    <link href="./assets/css/footer.css" rel="stylesheet" />
+
+</head>
+
+<body class="body">
+
+    <!-- ============== Menu principal ================ -->
+    <header class="encabezado">
+        <h1 class="encabezado__titulo">Traductor</h1>
+        <div class="encabezado__menus">
+            <div class="menu menu--principal">
+                <div class="menu__desplegable menu__desplegable--principal">Palabras populares
+                    <div class="menu__list-container menu__list-container--principal">
+                        <ul class="menu__lista menu__lista--principal">
+                            <li class="menu__item menu__item--principal"><a class="menu__link menu__link--principal"
+                                    href="">Ingles</a></li>
+                            <li class="menu__item menu__item--principal"><a class="menu__link menu__link--principal"
+                                    href="">Frances</a></li>
+                            <li class="menu__item menu__item--principal"><a class="menu__link menu__link--principal"
+                                    href="">Italiano</a></li>
+                            <li class="menu__item menu__item--principal"><a class="menu__link menu__link--principal"
+                                    href="">Portugues</a></li>
+
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ============== Fin Menu principal ================ -->
+
+            <!-- ==============  Menu Lateral =============  -->
+            <div class="menu menu--secundario">
+                <div class="menu__desplegable menu__desplegable--secundario">Palabras populares
+                    <div class="menu__list-container menu__list-container--secundario">
+                        <ul class="menu__lista menu__lista--secundario">
+                            <li class="menu__item menu__item--secundario"><a class="menu__link menu__link--secundario"
+                                    href="">Loop</a></li>
+                            <li class="menu__item menu__item--secundario"><a class="menu__link menu__link--secundario"
+                                    href="">Handler</a></li>
+                            <li class="menu__item menu__item--secundario"><a class="menu__link menu__link--secundario"
+                                    href="">Throw</a></li>
+                            <li class="menu__item menu__item--secundario"><a class="menu__link menu__link--secundario"
+                                    href="">Main</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ============== Fin Menu Lateral =============  -->
+        </div>
+
+    </header>
+    <main class="main">
+        <div id="car"></div>
+        <div class="carrusel">
+            <div class="slider-container">
+                <div class="slider-item item-active" value="Ingles">Ingles</div>
+                <div class="slider-item" value="Frances">Frances</div>
+                <div class="slider-item" value="Italiano">Italiano</div>
+                <div class="slider-item" value="Ingles">Portugues</div>
+            </div>
+        </div>
+       
+        <div class="traductor">
+            <form class="form">
+                <input class="form__input form__input--entrada" type="text" minlength="1" maxlength="900"
+                    placeholder="Ingrese una palabra">
+            </form>
+            <hr>
+            <div class="resultado">
+                <form class="form">
+                    <input class="form__input form__input--salida" type="text" minlength="1" maxlength="900"
+                        placeholder="Traduccion">
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <a class="footer__enlace-GitHub" href="https://github.com/MartinAlcaraz"><img src="./assets/img/logo-M.png"></a>
+        <p class="footer__texto">Desarrollado por A. Martin Alcaraz</p>
+    </footer>
+
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>

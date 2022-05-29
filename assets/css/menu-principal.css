@@ -1,0 +1,124 @@
+.encabezado {
+    padding: 0 1rem;
+    height: auto;
+}
+
+.encabezado__menus {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.encabezado__titulo {
+    font-size: 2rem;
+    text-align: center;
+    padding: 2rem;
+    color: var(--texto-blanco);
+    border: 4px double var(--texto-blanco);
+}
+
+.menu {
+    display: block;
+}
+
+.menu__desplegable {
+    display: inline-block;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--texto-blanco);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    margin: 0;
+    padding: 12px 25px;
+    background-color: var(--bg-boton-azul);
+    position: relative;
+}
+
+.menu__desplegable:hover {
+    cursor: pointer;
+}
+
+
+.menu__list-container {
+    display: none;
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    border-radius: 10px;
+    width: 40vw;
+    height: auto;
+    top: 85%;
+    left: -5px;
+    padding: 5px;
+    z-index: 1;
+}
+
+.menu__list-container::after {
+    content: "";
+    bottom: 84%;    /* At the top of the tooltip */
+    left: 30%;
+    border-width: 15px;
+    border-style: solid;
+    border-color: transparent transparent var(--bg-negro) transparent;
+    position: absolute;
+}
+
+.menu:hover .menu__list-container { 
+     display: inline-block;
+}
+
+.menu__lista {
+    border-radius: 10px;
+    background-color: var(--bg-negro);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: auto;
+    max-height: 120px;
+    width: auto;
+}
+
+.menu__item {
+    list-style-type: none;
+    font-size: medium;
+    padding: 0.1rem 2rem;
+    color: var(--texto-gris-mas-claro);
+    width: auto;
+}
+
+.menu__item:hover {
+    cursor: pointer;
+}
+
+.menu__link {
+    text-decoration: none;
+    color: var(--texto-gris-mas-claro);
+}
+
+/* =============== menu--principal ===================== */
+.menu__link--principal:hover {
+    color: var(--texto-azul);
+    font-style: italic;
+}
+
+
+/* =============== menu--secundario ===================== */
+
+.menu__lista--secundario {
+    align-items: flex-end;
+}
+
+.menu__list-container--secundario {
+    left: -10%;
+}
+
+.menu__list-container--secundario::after {
+    left: 70%;
+}
+.menu__link--secundario:hover {
+    color: var(--texto-azul);
+}
+

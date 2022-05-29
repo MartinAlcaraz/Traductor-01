@@ -1,0 +1,10 @@
+.body {
+    background-image: cadetblue;
+    background-image: repeating-linear-gradient( cadetblue , rgb(0, 0, 255));
+    height: auto;
+}
+
+.main {
+    padding: 1rem;
+    height: auto;
+}

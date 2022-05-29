@@ -1,0 +1,31 @@
+
+.traductor {
+    padding: 2rem 1rem;
+    margin-top: 1rem;
+    min-height: 200px;
+    height: auto;
+    background-color: var(--bg-boton-azul-transparente);
+    border-radius: 10px;
+}
+
+.traductor__titulo {
+    color: var(--texto-blanco-boton);
+}
+.form {
+    margin-top: 10px;
+}
+.form__input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    width: 100%;
+}
+
+.form__input::placeholder {
+    color: var(--texto-blanco-boton);
+    font-size: 16px;
+    font-weight: 300;
+}
+
+
+
