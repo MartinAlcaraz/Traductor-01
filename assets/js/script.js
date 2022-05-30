@@ -1,45 +1,41 @@
 
 const items = document.querySelectorAll(".slider-item");
 const body = document.querySelector(".body");
-const carrusel = document.querySelector(".slider-container");
+const carrusel = document.querySelector(".carrusel");
+const botonIzqCarrusel = document.querySelector("#boton-izquierdo");
+const botonDerCarrusel = document.querySelector("#boton-derecho");
 
-
-body.addEventListener("click", (event) => {
-   console.log(" ");
-   //console.log(event.offsetLeft);
-   console.log(event.target.offsetLeft);   
+botonDerCarrusel.addEventListener("click", () => {
+    carrusel.scrollLeft += 150;
+});
+botonIzqCarrusel.addEventListener("click", () => {
+    carrusel.scrollLeft -= 150;
 });
 
-
-// carrusel.addEventListener("scroll", (event) => {
-//    let puntoCero = items[0].offsetLeft;
-//    let puntoActual = event
-//    switch ()
-// });
-
-var timerScrollEndDetect = null;
+let timerScrollEndDetect = null;
 
 carrusel.addEventListener('scroll', function () {
     clearTimeout(timerScrollEndDetect);
-    result = document.querySelector("#car");
+
     timerScrollEndDetect = setTimeout(function () {
       let min= 0;
         [].slice.call(carrusel.children).forEach(function (elem, index) {
            console.log(index);
            console.log("elem: "+elem.offsetLeft);
+           console.log("getBoundingClientRect().left: "+elem.getBoundingClientRect().left);
            console.log("carrusel: "+carrusel.offsetLeft);
-           console.log("math: "+ Math.abs(elem.getBoundingClientRect().left - carrusel.getBoundingClientRect().left)); 
+           console.log("math: "+ Math.abs(elem.getBoundingClientRect().left -50 - carrusel.getBoundingClientRect().left)); 
 
-           // 
-           if (Math.abs(elem.getBoundingClientRect().left - carrusel.getBoundingClientRect().left) < 10) {
-                  elem.classList.add('item-active');
+           // se restan 50px porque se empieza con 50px de margen izquierdo
+           if (Math.abs(elem.getBoundingClientRect().left -50 - carrusel.getBoundingClientRect().left) < 10) {
+                  elem.classList.add('carrusel__item-active');
                   // result.innerHTML = 'elemento '+ (index);
            } else {
-               elem.classList.remove('item-active');
+               elem.classList.remove('carrusel__item-active');
             }
 
         });
-    }, 500);    
+    }, 400);    
     
 });
 

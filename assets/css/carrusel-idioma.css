@@ -1,63 +1,60 @@
-/* .slider-container {
-    background-color: gray;
-    display: flex;
-    width: 60vw;
-    height: auto;
-    overflow-x: scroll;
-    scroll-snap-type: x mandatory;
-    margin: 0 auto;
-} */
 
-.slider-container {
-    width: 40vw;
-    height: 60px;
-    /* background-color: gray; */
-    margin: auto;
+.carrusel-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.carrusel__boton {
+    display: none;
+    border-radius: 20px;
+    background-color: var(--bg-blanco);
+    padding: 7px 17px;
+}
+.carrusel__boton--izquierdo {
+    margin-left: 24vw;
+}
+.carrusel__boton--derecho {
+    margin-right: 24vw;
+}
+
+ .carrusel {
+    width: 240px;
+    height: 70px;
     scroll-snap-type: x mandatory;
     white-space: nowrap;
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+} 
+
+.carrusel::-webkit-scrollbar{
+    background-color: transparent;
 }
 
-.slider-item {
+.carrusel__item {
     border: none;
     color: var(--texto-gris-mas-claro);
     font-size: 16px;
     display: inline-block;
-    width: 100%; 
+    width: 140px; 
     height: 40px;
     scroll-snap-align: center;
     position: relative;
     padding: 10px 20px;
     background-color: var(--bg-boton-azul-transparente);
     border-radius: 10px;
-    margin: 10px 30px;
+    margin: 10px;
     text-align: center;
+} 
+
+.carrusel__item:first-child {
+    margin-left: 50px;
 }
 
-/* ancho total del slider es 160px */
-/* .slider-item {
-    border: none;
-    color: var(--texto-gris-mas-claro);
-    flex: 0 0 140px; 
-    width: 100%;
-    scroll-snap-align: center;
-    padding: 10px 20px;
-    background-color: var(--bg-boton-azul-transparente);
-    border-radius: 10px;
-    margin: 10px 10px;
-    text-align: center;
-}
- */
+.carrusel__item:last-child {
+    margin-right: 50px;
+} 
 
-/* .slider-item:first-child {
-    margin-left: 20px;
-}
-
-.slider-item:last-child {
-    margin-right: 40px;
-} */
-
-.item-active {
+.carrusel__item-active {
     background-color: var(--boton-slider-active);
 }

@@ -22,6 +22,7 @@
 }
 
 .menu__desplegable {
+    background-color: var(--bg-boton-azul);
     display: inline-block;
     border: none;
     border-radius: 10px;
@@ -31,9 +32,10 @@
     font-size: 14px;
     line-height: 16px;
     margin: 0;
-    padding: 12px 25px;
-    background-color: var(--bg-boton-azul);
+    padding: 7px 25px;
+    text-align: center;
     position: relative;
+    width: 45vw;
 }
 
 .menu__desplegable:hover {
