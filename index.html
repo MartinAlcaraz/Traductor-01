@@ -76,10 +76,10 @@
         <div class="carrusel-container">
             <div class="carrusel__boton carrusel__boton--izquierdo" id="boton-izquierdo">&lt;</div>
             <div class="carrusel">
-                <div class="carrusel__item carrusel__item-active" value="Ingles">Ingles</div>
-                <div class="carrusel__item" value="Frances">Frances</div>
-                <div class="carrusel__item" value="Italiano">Italiano</div>
-                <div class="carrusel__item" value="Ingles">Portugues</div>
+                <div class="carrusel__item carrusel__item-active" value="en">Ingles</div>
+                <div class="carrusel__item" value="fr">Frances</div>
+                <div class="carrusel__item" value="it">Italiano</div>
+                <div class="carrusel__item" value="pt">Portugues</div>
             </div>
             <div class="carrusel__boton carrusel__boton--derecho" id="boton-derecho">&gt;</div>
         </div>
@@ -87,13 +87,13 @@
         <div class="traductor">
             <form class="form">
                 <input class="form__input form__input--entrada" type="text" minlength="1" maxlength="900"
-                    placeholder="Ingrese una palabra">
+                    placeholder="Ingrese una palabra" data-tipo-texto-entrada>
             </form>
             <hr>
             <div class="resultado">
                 <form class="form">
                     <input class="form__input form__input--salida" type="text" minlength="1" maxlength="900"
-                        placeholder="Traduccion">
+                        placeholder="Traduccion" data-tipo-texto-salida>
                 </form>
             </div>
         </div>
@@ -103,7 +103,8 @@
         <p class="footer__texto">Desarrollado por A. Martin Alcaraz</p>
     </footer>
 
-    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/script.js" type="module"></script>
+    <script src="./assets/js/traductor.controller.js" type="module"></script>
 </body>
 
 </html>

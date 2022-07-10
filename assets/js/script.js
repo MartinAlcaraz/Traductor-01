@@ -20,11 +20,11 @@ carrusel.addEventListener('scroll', function () {
     timerScrollEndDetect = setTimeout(function () {
       let min= 0;
         [].slice.call(carrusel.children).forEach(function (elem, index) {
-           console.log(index);
-           console.log("elem: "+elem.offsetLeft);
-           console.log("getBoundingClientRect().left: "+elem.getBoundingClientRect().left);
-           console.log("carrusel: "+carrusel.offsetLeft);
-           console.log("math: "+ Math.abs(elem.getBoundingClientRect().left -50 - carrusel.getBoundingClientRect().left)); 
+        //    console.log(index);
+        //    console.log("elem: "+elem.offsetLeft);
+        //    console.log("getBoundingClientRect().left: "+elem.getBoundingClientRect().left);
+        //    console.log("carrusel: "+carrusel.offsetLeft);
+        //    console.log("math: "+ Math.abs(elem.getBoundingClientRect().left -50 - carrusel.getBoundingClientRect().left)); 
 
            // se restan 50px porque se empieza con 50px de margen izquierdo
            if (Math.abs(elem.getBoundingClientRect().left -50 - carrusel.getBoundingClientRect().left) < 10) {
@@ -38,4 +38,3 @@ carrusel.addEventListener('scroll', function () {
     }, 400);    
     
 });
-

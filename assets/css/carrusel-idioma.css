@@ -10,6 +10,11 @@
     background-color: var(--bg-blanco);
     padding: 7px 17px;
 }
+
+.carrusel__boton:hover {
+    cursor: pointer;
+}
+
 .carrusel__boton--izquierdo {
     margin-left: 24vw;
 }
