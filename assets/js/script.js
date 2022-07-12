@@ -3,14 +3,23 @@ const items = document.querySelectorAll(".slider-item");
 const body = document.querySelector(".body");
 const carruselEntrada = document.querySelector(".carrusel--entrada");
 const carruselSalida = document.querySelector(".carrusel--salida");
-const botonIzqCarrusel = document.querySelector("#boton-izquierdo");
-const botonDerCarrusel = document.querySelector("#boton-derecho");
+const botonEntradaIzq = document.querySelector("#boton-entrada__izquierdo");
+const botonEntradaDer = document.querySelector("#boton-entrada__derecho");
+const botonSalidaIzq = document.querySelector("#boton-salida__izquierdo");
+const botonSalidaDer = document.querySelector("#boton-salida__derecho");
 
-botonDerCarrusel.addEventListener("click", () => {
-    carrusel.scrollLeft += 150;
+botonEntradaIzq.addEventListener("click", () => {
+    carruselEntrada.scrollLeft -= 150;
 });
-botonIzqCarrusel.addEventListener("click", () => {
-    carrusel.scrollLeft -= 150;
+botonEntradaDer.addEventListener("click", () => {
+    carruselEntrada.scrollLeft += 150;
+});
+
+botonSalidaIzq.addEventListener("click", () => {
+    carruselSalida.scrollLeft -= 150;
+});
+botonSalidaDer.addEventListener("click", () => {
+    carruselSalida.scrollLeft += 150;
 });
 
 let timerScrollEndDetect = null;

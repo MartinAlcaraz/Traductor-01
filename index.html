@@ -29,7 +29,7 @@
         <h1 class="encabezado__titulo">Traductor</h1>
         <div class="encabezado__menus">
             <div class="menu menu--principal">
-                <div class="menu__desplegable menu__desplegable--principal">Idiomas
+                <!-- <div class="menu__desplegable menu__desplegable--principal">Idiomas
                     <div class="menu__list-container menu__list-container--principal">
                         <ul class="menu__lista menu__lista--principal">
                             <li class="menu__item menu__item--principal"><a class="menu__link menu__link--principal"
@@ -44,7 +44,7 @@
                         </ul>
                     </div>
 
-                </div>
+                </div> -->
             </div>
 
             <!-- ============== Fin Menu principal ================ -->
@@ -88,7 +88,7 @@
         <div class="traductor">
             <h4 class="traductor__titulo">Entrada</h4>
             <div class="carrusel-container">
-                <div class="carrusel__boton carrusel__boton--izquierdo" id="boton-izquierdo">&lt;</div>
+                <div class="carrusel__boton carrusel__boton--izquierdo" id="boton-entrada__izquierdo">&lt;</div>
                 <div class="carrusel carrusel--entrada">
                     <div class="carrusel__item carrusel__entrada--item-active" value="en">Ingles</div>
                     <div class="carrusel__item" value="fr">Frances</div>
@@ -96,17 +96,17 @@
                     <div class="carrusel__item" value="pt">Portugues</div>
                     <div class="carrusel__item" value="es">Español</div>
                 </div>
-                <div class="carrusel__boton carrusel__boton--derecho" id="boton-derecho">&gt;</div>
+                <div class="carrusel__boton carrusel__boton--derecho" id="boton-entrada__derecho">&gt;</div>
             </div>
 
             <input class="form__input form__input--entrada" type="text" minlength="1" maxlength="900"
                 placeholder="Ingrese una palabra" data-tipo-texto-entrada>
 
-            <hr>
-            <div class="resultado">
-                <h4 class="traductor__titulo">Salida</h4>
+        </div>
+        <div class="traductor resultado">
+            <h4 class="traductor__titulo">Salida</h4>
             <div class="carrusel-container">
-                <div class="carrusel__boton carrusel__boton--izquierdo" id="boton-izquierdo">&lt;</div>
+                <div class="carrusel__boton carrusel__boton--izquierdo" id="boton-salida__izquierdo">&lt;</div>
                 <div class="carrusel carrusel--salida">
                     <div class="carrusel__item carrusel__salida--item-active" value="es">Español</div>
                     <div class="carrusel__item" value="fr">Frances</div>
@@ -114,14 +114,14 @@
                     <div class="carrusel__item" value="pt">Portugues</div>
                     <div class="carrusel__item" value="en">Ingles</div>
                 </div>
-                <div class="carrusel__boton carrusel__boton--derecho" id="boton-derecho">&gt;</div>
+                <div class="carrusel__boton carrusel__boton--derecho" id="boton-salida__derecho">&gt;</div>
             </div>
-                <form class="form">
-                    <input class="form__input form__input--salida" type="text" minlength="1" maxlength="900"
-                        placeholder="Traduccion" data-tipo-texto-salida>
-                </form>
-            </div>
+            <form class="form">
+                <input class="form__input form__input--salida" type="text" minlength="1" maxlength="900"
+                    placeholder="Traduccion" data-tipo-texto-salida>
+            </form>
         </div>
+
     </main>
     <footer class="footer">
         <a class="footer__enlace-GitHub" href="https://github.com/MartinAlcaraz"><img src="./assets/img/logo-M.png"></a>

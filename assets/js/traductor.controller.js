@@ -40,22 +40,25 @@ const traducir = async (texto) => {
 
 let traducirTexto = async () => {
     let idiomaEntrada = document.querySelector(".carrusel__entrada--item-active").getAttribute("value");
-    console.log("idiomaEntrada " + idiomaEntrada);
+    //console.log("idiomaEntrada " + idiomaEntrada);
     let idiomaSalida = document.querySelector(".carrusel__salida--item-active").getAttribute("value");
-    console.log("idiomaSalida " + idiomaSalida);
+    //console.log("idiomaSalida " + idiomaSalida);
     let texto = textoEntrada.value;
     
-    textoSalida.value = "idiomaEntrada " + idiomaEntrada + ". IdiomaSalida " + idiomaSalida;
-    detenerAnimacion();
-    // try {
-    //     let textoTraducido = await servicios.traducir(idiomaEntrada, idiomaSalida, texto);
-    //     if (textoTraducido){
-    //         detenerAnimacion();
-    //     }
-    //     textoSalida.value = textoTraducido.data.translatedText;
-    // } catch (error) {
-    //     textoSalida.value = "No se pudo traducir";
-    // }
+    if (idiomaEntrada == idiomaSalida){
+        textoSalida.value = "Cambie el idioma de salida.";
+        detenerAnimacion();
+        return;
+    }
+    try {
+        let textoTraducido = await servicios.traducir(idiomaEntrada, idiomaSalida, texto);
+        if (textoTraducido){
+            detenerAnimacion();
+        }
+        textoSalida.value = textoTraducido.data.translatedText;
+    } catch (error) {
+        textoSalida.value = "No se pudo traducir";
+    }
 }
 
 let intervalId;
