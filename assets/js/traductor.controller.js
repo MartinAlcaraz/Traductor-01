@@ -3,7 +3,8 @@ import { servicios } from "./service.js";
 
 const textoEntrada = document.querySelector("[data-tipo-texto-entrada]");
 const textoSalida = document.querySelector("[data-tipo-texto-salida]");
-const carrusel = document.querySelector(".carrusel");
+const carruselEntrada = document.querySelector(".carrusel--entrada");
+const carruselSalida = document.querySelector(".carrusel--salida");
 
 let cantEntradas = 0;
 
@@ -38,21 +39,23 @@ const traducir = async (texto) => {
 
 
 let traducirTexto = async () => {
-    let idiomaEntrada = document.querySelector(".carrusel__item-active").getAttribute("value");
+    let idiomaEntrada = document.querySelector(".carrusel__entrada--item-active").getAttribute("value");
     console.log("idiomaEntrada " + idiomaEntrada);
-    idiomaEntrada = "en";
-    let idiomaSalida = "es";
+    let idiomaSalida = document.querySelector(".carrusel__salida--item-active").getAttribute("value");
+    console.log("idiomaSalida " + idiomaSalida);
     let texto = textoEntrada.value;
-
-    try {
-        let textoTraducido = await servicios.traducir(idiomaEntrada, idiomaSalida, texto);
-        if (textoTraducido){
-            detenerAnimacion();
-        }
-        textoSalida.value = textoTraducido.data.translatedText;
-    } catch (error) {
-        textoSalida.value = "No se pudo traducir";
-    }
+    
+    textoSalida.value = "idiomaEntrada " + idiomaEntrada + ". IdiomaSalida " + idiomaSalida;
+    detenerAnimacion();
+    // try {
+    //     let textoTraducido = await servicios.traducir(idiomaEntrada, idiomaSalida, texto);
+    //     if (textoTraducido){
+    //         detenerAnimacion();
+    //     }
+    //     textoSalida.value = textoTraducido.data.translatedText;
+    // } catch (error) {
+    //     textoSalida.value = "No se pudo traducir";
+    // }
 }
 
 let intervalId;
@@ -90,21 +93,32 @@ function prepararTraduccion() {
 
 textoEntrada.addEventListener("keydown", prepararTraduccion);
 
-// create an observer instance of class
-var observer = new MutationObserver(function (mutations) {
+// create an observer instance
+// si se elige otro idioma el observer lo detectará. 
+let observerCarruselEntrada = new MutationObserver(function (mutations) {
     mutations.forEach(function (mutation) {
-
-        if (mutation.target.className == "carrusel__item carrusel__item-active") {
+        if (mutation.target.className == "carrusel__item carrusel__entrada--item-active") {
             prepararTraduccion();
         }
     });
 });
 
+let observerCarruselSalida = new MutationObserver(function (mutations) {
+    mutations.forEach(function (mutation) {
+        if (mutation.target.className == "carrusel__item carrusel__salida--item-active") {
+            prepararTraduccion();
+        }
+    });
+});
+
+
 // configuration of the observer:
-var config = { attributes: true, childList: true, subtree: true };
+let config = { attributes: true, childList: true, subtree: true };
 
 // comenzar a observar
-observer.observe(carrusel, config);
+observerCarruselEntrada.observe(carruselEntrada, config);
   // dejar de observar
  //  observador.disconnect();
+
+ observerCarruselSalida.observe(carruselSalida, config);
 

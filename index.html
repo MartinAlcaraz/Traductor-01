@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -72,8 +73,8 @@
 
     </header>
     <main class="main">
-        
-        <div class="carrusel-container">
+
+        <!-- <div class="carrusel-container">
             <div class="carrusel__boton carrusel__boton--izquierdo" id="boton-izquierdo">&lt;</div>
             <div class="carrusel">
                 <div class="carrusel__item carrusel__item-active" value="en">Ingles</div>
@@ -82,15 +83,39 @@
                 <div class="carrusel__item" value="pt">Portugues</div>
             </div>
             <div class="carrusel__boton carrusel__boton--derecho" id="boton-derecho">&gt;</div>
-        </div>
-       
+        </div> -->
+
         <div class="traductor">
-            <form class="form">
-                <input class="form__input form__input--entrada" type="text" minlength="1" maxlength="900"
-                    placeholder="Ingrese una palabra" data-tipo-texto-entrada>
-            </form>
+            <h4 class="traductor__titulo">Entrada</h4>
+            <div class="carrusel-container">
+                <div class="carrusel__boton carrusel__boton--izquierdo" id="boton-izquierdo">&lt;</div>
+                <div class="carrusel carrusel--entrada">
+                    <div class="carrusel__item carrusel__entrada--item-active" value="en">Ingles</div>
+                    <div class="carrusel__item" value="fr">Frances</div>
+                    <div class="carrusel__item" value="it">Italiano</div>
+                    <div class="carrusel__item" value="pt">Portugues</div>
+                    <div class="carrusel__item" value="es">Español</div>
+                </div>
+                <div class="carrusel__boton carrusel__boton--derecho" id="boton-derecho">&gt;</div>
+            </div>
+
+            <input class="form__input form__input--entrada" type="text" minlength="1" maxlength="900"
+                placeholder="Ingrese una palabra" data-tipo-texto-entrada>
+
             <hr>
             <div class="resultado">
+                <h4 class="traductor__titulo">Salida</h4>
+            <div class="carrusel-container">
+                <div class="carrusel__boton carrusel__boton--izquierdo" id="boton-izquierdo">&lt;</div>
+                <div class="carrusel carrusel--salida">
+                    <div class="carrusel__item carrusel__salida--item-active" value="es">Español</div>
+                    <div class="carrusel__item" value="fr">Frances</div>
+                    <div class="carrusel__item" value="it">Italiano</div>
+                    <div class="carrusel__item" value="pt">Portugues</div>
+                    <div class="carrusel__item" value="en">Ingles</div>
+                </div>
+                <div class="carrusel__boton carrusel__boton--derecho" id="boton-derecho">&gt;</div>
+            </div>
                 <form class="form">
                     <input class="form__input form__input--salida" type="text" minlength="1" maxlength="900"
                         placeholder="Traduccion" data-tipo-texto-salida>

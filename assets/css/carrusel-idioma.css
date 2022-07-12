@@ -60,6 +60,9 @@
     margin-right: 50px;
 } 
 
-.carrusel__item-active {
+.carrusel__entrada--item-active {
+    background-color: var(--boton-slider-active);
+}
+.carrusel__salida--item-active {
     background-color: var(--boton-slider-active);
 }
