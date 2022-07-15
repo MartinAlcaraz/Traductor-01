@@ -35,7 +35,7 @@
     padding: 7px 25px;
     text-align: center;
     position: relative;
-    width: 45vw;
+    width: 35vw;
 }
 
 .menu__desplegable:hover {
@@ -93,15 +93,6 @@
 
 .menu__item:hover {
     cursor: pointer;
-}
-
-.menu__link {
-    text-decoration: none;
-    color: var(--texto-gris-mas-claro);
-}
-
-/* =============== menu--principal ===================== */
-.menu__link--principal:hover {
     color: var(--texto-azul);
     font-style: italic;
 }
@@ -120,7 +111,6 @@
 .menu__list-container--secundario::after {
     left: 70%;
 }
-.menu__link--secundario:hover {
-    color: var(--texto-azul);
-}
+
+
 

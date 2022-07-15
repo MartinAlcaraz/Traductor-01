@@ -1,4 +1,7 @@
+import { crearLI } from "./createItem.js";
+import { analizarYguardarPalabras } from "./guardarPalabras.js";
 
+const lista = document.querySelector("[data-tipo-lista]");
 const items = document.querySelectorAll(".slider-item");
 const body = document.querySelector(".body");
 const carruselEntrada = document.querySelector(".carrusel--entrada");
@@ -7,6 +10,17 @@ const botonEntradaIzq = document.querySelector("#boton-entrada__izquierdo");
 const botonEntradaDer = document.querySelector("#boton-entrada__derecho");
 const botonSalidaIzq = document.querySelector("#boton-salida__izquierdo");
 const botonSalidaDer = document.querySelector("#boton-salida__derecho");
+
+const menu = document.querySelector(".menu__lista");
+const textoEntrada = document.querySelector("[data-tipo-texto-entrada]");
+
+menu.addEventListener("click", (e) => {
+
+    console.log(e.target.innerHTML);
+    textoEntrada.value = e.target.innerHTML;
+    textoEntrada.focus();
+});
+
 
 botonEntradaIzq.addEventListener("click", () => {
     carruselEntrada.scrollLeft -= 150;
@@ -69,3 +83,21 @@ carruselSalida.addEventListener('scroll', function () {
         });
     }, 400);
 });
+
+
+const cargarListaPalabras = () => {
+    let vector = JSON.parse(localStorage.getItem('ListaPalabras')) || [];
+    console.log(vector);
+    if (vector.length > 0) {
+        let hashMap = listaPalabras[0];
+        hashMap.forEach(palabra => {
+            console.log(palabra);
+            let item = crearLI(palabra);
+            lista.appendChild(item);
+        });
+    }
+}
+
+//cargarListaPalabras();
+
+analizarYguardarPalabras("say bye");

@@ -1,5 +1,6 @@
 
 import { servicios } from "./service.js";
+import { analizarYguardarPalabras } from "./guardarPalabras.js";
 
 const textoEntrada = document.querySelector("[data-tipo-texto-entrada]");
 const textoSalida = document.querySelector("[data-tipo-texto-salida]");
@@ -40,19 +41,19 @@ const traducir = async (texto) => {
 
 let traducirTexto = async () => {
     let idiomaEntrada = document.querySelector(".carrusel__entrada--item-active").getAttribute("value");
-    //console.log("idiomaEntrada " + idiomaEntrada);
     let idiomaSalida = document.querySelector(".carrusel__salida--item-active").getAttribute("value");
-    //console.log("idiomaSalida " + idiomaSalida);
     let texto = textoEntrada.value;
-    
-    if (idiomaEntrada == idiomaSalida){
+
+    if (idiomaEntrada == idiomaSalida) {
         textoSalida.value = "Cambie el idioma de salida.";
         detenerAnimacion();
         return;
     }
+
     try {
         let textoTraducido = await servicios.traducir(idiomaEntrada, idiomaSalida, texto);
-        if (textoTraducido){
+        //analizarYguardarPalabras(texto);
+        if (textoTraducido) {
             detenerAnimacion();
         }
         textoSalida.value = textoTraducido.data.translatedText;
@@ -95,7 +96,7 @@ function prepararTraduccion() {
 }
 
 textoEntrada.addEventListener("keydown", prepararTraduccion);
-
+textoEntrada.addEventListener("focus", prepararTraduccion);
 // create an observer instance
 // si se elige otro idioma el observer lo detectará. 
 let observerCarruselEntrada = new MutationObserver(function (mutations) {
@@ -120,8 +121,13 @@ let config = { attributes: true, childList: true, subtree: true };
 
 // comenzar a observar
 observerCarruselEntrada.observe(carruselEntrada, config);
-  // dejar de observar
- //  observador.disconnect();
+// dejar de observar
+//  observador.disconnect();
 
- observerCarruselSalida.observe(carruselSalida, config);
+observerCarruselSalida.observe(carruselSalida, config);
+
+//////////////////////////
+
+
+
 
