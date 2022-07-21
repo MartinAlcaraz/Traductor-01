@@ -1,10 +1,11 @@
 export const analizarYguardarPalabras = (texto) => {
+    texto = texto.trim();
     let arrayTexto = texto.split(" ");
 
     let map = new Map(JSON.parse(localStorage.getItem('ListaPalabras'))) || new Map();
 
-    console.log('map leido');
-    console.log(map);
+    // console.log('map leido');
+    // console.log(map);
 
     arrayTexto.forEach(palabra => {
         if (map.has(palabra)) {
@@ -12,9 +13,12 @@ export const analizarYguardarPalabras = (texto) => {
             cant++;
             map.set(palabra, cant);
         } else {
-            map.set(palabra, 1);
+            palabra.replace(" ",""); // elimina los strings que son espacios.
+            if (palabra != ""){
+                map.set(palabra, 1);
+            }
         }
     });
-  
-    localStorage.setItem('ListaPalabras', JSON.stringify( Array.from( map.entries() )));
+
+    localStorage.setItem('ListaPalabras', JSON.stringify(Array.from(map.entries())));
 }

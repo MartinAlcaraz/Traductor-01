@@ -86,18 +86,27 @@ carruselSalida.addEventListener('scroll', function () {
 
 
 const cargarListaPalabras = () => {
-    let vector = JSON.parse(localStorage.getItem('ListaPalabras')) || [];
-    console.log(vector);
-    if (vector.length > 0) {
-        let hashMap = listaPalabras[0];
-        hashMap.forEach(palabra => {
-            console.log(palabra);
-            let item = crearLI(palabra);
-            lista.appendChild(item);
-        });
+    let map = new Map(JSON.parse(localStorage.getItem('ListaPalabras'))) || new Map();
+    console.log("Lista de palabras. Cantidad " + map.size);
+
+    // map.forEach((value, key) => {
+    //     console.log("key: " + key + " ,value: " + value);
+
+    // });
+
+    for (let palabra of map.keys()) {
+        let item = crearLI(palabra);
+        lista.appendChild(item);    
     }
+
 }
 
-//cargarListaPalabras();
+const borrarLista = () => {
+    let map = new Map(JSON.parse(localStorage.getItem('ListaPalabras'))) || new Map();
+    map.clear();
+    localStorage.setItem('ListaPalabras', JSON.stringify(Array.from(map.entries())));
+}
 
-analizarYguardarPalabras("say bye");
+cargarListaPalabras();
+//borrarLista();
+

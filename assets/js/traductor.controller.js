@@ -26,10 +26,9 @@ const getLenguajes = async () => {
 const traducir = async (texto) => {
     try {
         let traduccion = await servicios.traducir(texto);
-
-        console.log(traduccion);
-        console.log(" space ");
-        console.log(traduccion.data.translatedText);
+        // console.log(traduccion);
+        // console.log(" space ");
+        // console.log(traduccion.data.translatedText);
 
     } catch (error) {
         console.log(error);
@@ -52,7 +51,7 @@ let traducirTexto = async () => {
 
     try {
         let textoTraducido = await servicios.traducir(idiomaEntrada, idiomaSalida, texto);
-        //analizarYguardarPalabras(texto);
+        analizarYguardarPalabras(texto);
         if (textoTraducido) {
             detenerAnimacion();
         }
