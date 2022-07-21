@@ -87,18 +87,30 @@ carruselSalida.addEventListener('scroll', function () {
 
 const cargarListaPalabras = () => {
     let map = new Map(JSON.parse(localStorage.getItem('ListaPalabras'))) || new Map();
-    console.log("Lista de palabras. Cantidad " + map.size);
 
-    // map.forEach((value, key) => {
-    //     console.log("key: " + key + " ,value: " + value);
+    let vector = Array.from(map.values());
+    vector.sort();   // ordena los valores de repeticion de las palabras
+    
+    let vectorPalabras = []; // guarda las palabras mas repetidas del map
+    let i= vector.length;
 
-    // });
-
-    for (let palabra of map.keys()) {
-        let item = crearLI(palabra);
-        lista.appendChild(item);    
+    while (i >= 0 || vectorPalabras.length < 10) {
+        map.forEach((cantidad, palabra) => {
+            if (cantidad = vector[i] && vectorPalabras.length < 10){
+                vectorPalabras.push(palabra);
+                map.delete(palabra);
+                i--;
+            }
+        });
+        i--;
     }
 
+    lista.innerHTML = '';
+    vectorPalabras.forEach(palabra => {
+        let item = crearLI(palabra);
+        lista.appendChild(item);
+    });
+    
 }
 
 const borrarLista = () => {
