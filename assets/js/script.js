@@ -119,6 +119,6 @@ const borrarLista = () => {
     localStorage.setItem('ListaPalabras', JSON.stringify(Array.from(map.entries())));
 }
 
-cargarListaPalabras();
+//cargarListaPalabras();
 //borrarLista();
 
