@@ -89,19 +89,23 @@ const cargarListaPalabras = () => {
     let map = new Map(JSON.parse(localStorage.getItem('ListaPalabras'))) || new Map();
 
     let vector = Array.from(map.values());
+    //console.log(map);
     vector.sort();   // ordena los valores de repeticion de las palabras
-    
     let vectorPalabras = []; // guarda las palabras mas repetidas del map
-    let i= vector.length;
+    let i= vector.length -1; // indice para recorrer el array desde el fin hacia el inicio
 
-    while (i >= 0 || vectorPalabras.length < 10) {
+    while (i > 0 && vectorPalabras.length < 10) {
+        
         map.forEach((cantidad, palabra) => {
-            if (cantidad = vector[i] && vectorPalabras.length < 10){
+            if (cantidad == vector[i] && vectorPalabras.length < 10){
                 vectorPalabras.push(palabra);
+                console.log(palabra,' ', cantidad);
                 map.delete(palabra);
                 i--;
             }
         });
+        console.log('fin bucle');
+
         i--;
     }
 
@@ -119,6 +123,6 @@ const borrarLista = () => {
     localStorage.setItem('ListaPalabras', JSON.stringify(Array.from(map.entries())));
 }
 
-//cargarListaPalabras();
+cargarListaPalabras();
 //borrarLista();
 
